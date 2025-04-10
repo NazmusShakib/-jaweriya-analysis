@@ -1,0 +1,91 @@
+<?php
+
+namespace App\Services;
+
+use Illuminate\Support\Facades\Http;
+
+class DescriptionService
+{
+    public function __construct()
+    {
+        // Constructor code if needed
+    }
+
+    public function getDescription($tabIdDesc, $language)
+    {
+      $imageOneDesc = config('custom-contents.tabs.tab1.description');  
+      $imageTwoDesc = config('custom-contents.tabs.tab2.description');
+      $imageThreeDesc = config('custom-contents.tabs.tab3.description');
+      $imageFourDesc = config('custom-contents.tabs.tab4.description');
+      $imageFiveDesc = config('custom-contents.tabs.tab5.description');
+
+      switch ($tabIdDesc) {
+          case 'tab1-desc':
+              return $this->paraphraseTextService($imageOneDesc, $language);
+          case 'tab2-desc':
+              return $this->paraphraseTextService($imageTwoDesc, $language);
+          case 'tab3-desc':
+              return $this->paraphraseTextService($imageThreeDesc, $language);
+          case 'tab4-desc':
+              return $this->paraphraseTextService($imageFourDesc, $language);
+          case 'tab5-desc':
+              return $this->paraphraseTextService($imageFiveDesc, $language);
+          default:
+              return "No description available for the provided text.";
+      }
+    }
+
+    // Private function to call OpenRouter API
+    private function paraphraseTextService($text, $language)
+    {
+        try {
+            // $apiKey = "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";
+            $apiKey = "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";
+
+            $baseUrl = "https://openrouter.ai/api/v1";
+
+            // Construct the paraphrasing message based on the selected language
+            $message = "Can you paraphrase the following text in $language: '$text'";
+
+            // Call the API to paraphrase the text
+            $response = Http::withHeaders([
+                'Authorization' => 'Bearer ' . $apiKey,
+                'Content-Type'  => 'application/json',
+                'HTTP-Referer'  => env('APP_URL', 'http://localhost:8000'),
+                'X-Title'       => env('APP_NAME', 'LaravelApp'),
+            ])->post($baseUrl . "/chat/completions", [
+                "model" => "openai/gpt-3.5-turbo",
+                "messages" => [
+                    [
+                        "role" => "user",
+                        "content" => $message
+                    ]
+                ]
+            ]);
+
+            // Check if the API response is successful
+            if ($response->successful()) {
+                $paraphrasedText = $response->json()['choices'][0]['message']['content'];
+                return [
+                    'status' => 'success',
+                    'paraphrasedText' => $paraphrasedText,
+                ];
+            }
+
+            // Handle unsuccessful API response
+            return [
+                'status' => 'error',
+                'message' => 'Failed to paraphrase the text. Please try again later.',
+            ];
+        } catch (\Exception $e) {
+            // Handle exceptions (network issues, invalid API key, etc.)
+            return [
+                'status' => 'error',
+                'message' => 'An error occurred: ' . $e->getMessage(),
+            ];
+        }
+    }
+
+
+
+}
