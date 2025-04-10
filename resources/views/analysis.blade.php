@@ -33,7 +33,9 @@
                     <img id="tab1-img" class="img-fluid rounded shadow-lg" style="max-height: 400px;" alt="Tab 1 Image">
                     <p class="mt-3 fs-5" id="tab1-desc">This is the description for Tab 1.</p>
                     <div class="d-flex justify-content-center mt-3">
-                    <select class="form-select w-auto mx-2 language-select">
+                        <button class="btn btn-primary mx-2" onclick="paraphraseText('tab1-desc')">Paraphrase</button>
+                        
+                        <select class="form-select w-auto mx-2 language-select">
                             <option value="en">English</option>
                             <option value="fr">French</option>
                             <option value="es">Spanish</option>
@@ -43,7 +45,7 @@
                             <option value="hindi">Hindi</option>
                         </select>
 
-                        <button class="btn btn-primary mx-2" onclick="paraphraseText('tab1-desc')">Paraphrase</button>
+                        <button class="btn btn-primary mx-2" onclick="paraphraseText('tab1-desc')">Submit</button>
 
                         <div class="loader" style="display: none;">
                             <div class="spinner-border text-primary" role="status">
@@ -59,7 +61,8 @@
                     <p class="mt-3 fs-5" id="tab2-desc">This is the description for Tab 2.</p>
 
                     <div class="d-flex justify-content-center mt-3">
-                    <select class="form-select w-auto mx-2 language-select">
+                        <button class="btn btn-primary mx-2" onclick="paraphraseText('tab2-desc')">Paraphrase</button>
+                        <select class="form-select w-auto mx-2 language-select">
                             <option value="en">English</option>
                             <option value="fr">French</option>
                             <option value="es">Spanish</option>
@@ -69,7 +72,7 @@
                             <option value="hindi">Hindi</option>
                         </select>
 
-                        <button class="btn btn-primary mx-2" onclick="paraphraseText('tab2-desc')">Paraphrase</button>
+                        <button class="btn btn-primary mx-2" onclick="paraphraseText('tab2-desc')">Submit</button>
 
                         <div class="loader" style="display: none;">
                             <div class="spinner-border text-primary" role="status">
@@ -85,6 +88,7 @@
                     <p class="mt-3 fs-5" id="tab3-desc">This is the description for Tab 3.</p>
 
                     <div class="d-flex justify-content-center mt-3">
+                        <button class="btn btn-primary mx-2" onclick="paraphraseText('tab3-desc')">Paraphrase</button>
                         <select class="form-select w-auto mx-2 language-select">
                             <option value="en">English</option>
                             <option value="fr">French</option>
@@ -95,7 +99,7 @@
                             <option value="hindi">Hindi</option>
                         </select>
 
-                        <button class="btn btn-primary mx-2" onclick="paraphraseText('tab3-desc')">Paraphrase</button>
+                        <button class="btn btn-primary mx-2" onclick="paraphraseText('tab3-desc')">Submit</button>
 
                         <div class="loader" style="display: none;">
                             <div class="spinner-border text-primary" role="status">
@@ -111,7 +115,8 @@
                     <p class="mt-3 fs-5" id="tab4-desc">This is the description for Tab 4.</p>
 
                     <div class="d-flex justify-content-center mt-3">
-                    <select class="form-select w-auto mx-2 language-select">
+                        <button class="btn btn-primary mx-2" onclick="paraphraseText('tab4-desc')">Paraphrase</button>
+                        <select class="form-select w-auto mx-2 language-select">
                             <option value="en">English</option>
                             <option value="fr">French</option>
                             <option value="es">Spanish</option>
@@ -121,7 +126,7 @@
                             <option value="hindi">Hindi</option>
                         </select>
 
-                        <button class="btn btn-primary mx-2" onclick="paraphraseText('tab4-desc')">Paraphrase</button>
+                        <button class="btn btn-primary mx-2" onclick="paraphraseText('tab4-desc')">Submit</button>
 
                         <div class="loader" style="display: none;">
                             <div class="spinner-border text-primary" role="status">
@@ -137,7 +142,8 @@
                     <p class="mt-3 fs-5" id="tab5-desc">This is the description for Tab 5.</p>
 
                     <div class="d-flex justify-content-center mt-3">
-                    <select class="form-select w-auto mx-2 language-select">
+                        <button class="btn btn-primary mx-2" onclick="paraphraseText('tab5-desc')">Paraphrase</button>
+                        <select class="form-select w-auto mx-2 language-select">
                             <option value="en">English</option>
                             <option value="fr">French</option>
                             <option value="es">Spanish</option>
@@ -147,7 +153,7 @@
                             <option value="hindi">Hindi</option>
                         </select>
 
-                        <button class="btn btn-primary mx-2" onclick="paraphraseText('tab5-desc')">Paraphrase</button>
+                        <button class="btn btn-primary mx-2" onclick="paraphraseText('tab5-desc')">Submit</button>
 
                         <div class="loader" style="display: none;">
                             <div class="spinner-border text-primary" role="status">

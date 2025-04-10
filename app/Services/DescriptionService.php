@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 
 class DescriptionService
 {
@@ -40,7 +41,7 @@ class DescriptionService
     {
         try {
             // $apiKey = "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";
-            $apiKey = "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";
+            $apiKey = "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";
 
             $baseUrl = "https://openrouter.ai/api/v1";
 
@@ -61,6 +62,11 @@ class DescriptionService
                         "content" => $message
                     ]
                 ]
+            ]);
+
+            Log::info('API Response:', [
+                'status' => $response->status(),
+                'body' => $response->body(),
             ]);
 
             // Check if the API response is successful
