@@ -4,7 +4,7 @@
 		<div class="row">
 			<div class="col-xl-3 col-lg-3 col-md-6">
 				<div class="footer-widget">
-					<a href="index.html" class="logo d-blok">
+					<a href="{{ url('/') }}" class="logo d-blok">
 						<img src="assets/images/logo.svg" alt="">
 					</a>
 					<p>Lorem ipsum dolor sit amco nsetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna .</p>
@@ -16,7 +16,7 @@
 					<ul>
 						<li><a href="{{ url('/') }}">Home</a></li>
 						<li><a href="{{ route('analysis') }}">Analysis</a></li>
-						<li><a href="javascript:void(0)">Event</a></li>
+						<li><a href="{{ url('/') }}#contact">Contact</a></li>
 					</ul>
 				</div>
 			</div>
@@ -39,9 +39,6 @@
 						</li>
 						<li>
 							<p>Email: hello@example.com</p>
-						</li>
-						<li>
-							<p>Address: Random Road
 						</li>
 					</ul>
 				</div>

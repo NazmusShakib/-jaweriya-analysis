@@ -3,7 +3,6 @@
 @section('title', 'Home Page')
 
 @section('content')
-	<!--====== HERO PART START ======-->
 	<section id="home" class="hero-area bg_cover">
 		<div class="container">
 			<div class="row align-items-center">
@@ -11,9 +10,9 @@
 					<div class="hero-content">
 						<h2 class="mb-30 wow fadeInUp" data-wow-delay=".2s">AI Insights</h2>
 						<p class="wow fadeInUp" data-wow-delay=".4s">Unlock the story behind your data — instantly and in any language</p>
-						<div class="hero-btns">
+						<!-- <div class="hero-btns">
 							<a href="#courses" class="main-btn wow fadeInUp" data-wow-delay=".6s">Courses</a>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
@@ -115,7 +114,7 @@
 							</div>
 							<div class="row">
 								<div class="col-12 text-right">
-									<button class="main-btn btn-hover" type="submit">Send</button>
+									<button class="main-btn btn-hover" type="button">Send</button>
 								</div>
 							</div>
 						</form>
@@ -124,5 +123,4 @@
 			</div>
 		</div>
 	</section>
-	<!--====== CONTACT PART ENDS ======-->
 @endsection
