@@ -1,66 +1,54 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Dynamic AI-powered Tool for Paraphrasing Descriptive Content
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This project is a **web-based platform** developed using **Laravel 12**, which integrates an AI-powered tool for paraphrasing descriptive content associated with visual analytics. The application allows users to interact with **analytical images** and generate paraphrased descriptions in multiple languages using **OpenAI’s GPT-3.5-turbo** model via the **OpenRouter.ai** API. The tool focuses on enhancing accessibility and understanding for users, especially non-native English speakers, by providing intelligent paraphrasing of descriptive content.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Analytical Images**: Displays charts and graphs generated from the meteorite landing dataset (e.g., maps, time series, bar charts, box plots).
+- **AI-Powered Paraphrasing**: Allows users to paraphrase descriptions using the GPT-3.5-turbo model.
+- **Multilingual Support**: Paraphrasing in multiple languages for broader accessibility.
+- **No Database**: The application operates without a database and does not require additional server-side storage.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Prerequisites
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+To run this project locally, ensure you have the following installed:
 
-## Learning Laravel
+- **PHP 8.2 or higher** (Laravel 12 requires this version)
+- **Composer** (for managing Laravel dependencies)
+- **Laravel 12** (this project is built with the Laravel framework)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Installation
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Follow these steps to set up the project:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/NazmusShakib/-jaweriya-analysis.git
+   cd -jaweriya-analysis
 
-## Laravel Sponsors
+2. Install PHP dependencies using Composer:
+    ```bash
+      composer install
+3. Configure your .env file for API keys:
+  Set your OpenRouter.ai API key in the .env file. For example:
+      ```env
+      OPENROUTER_API_KEY=your-api-key-here
+4. Generate application key (Laravel requires an app key):
+    ```bash
+    php artisan key:generate
+5. Serve the application locally:
+    ```bash
+    php artisan serve
+6. Open the application in your browser:
+      - Go to http://localhost:8000 to view the platform.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Usage
+- Upon launching the application, users can view home page and various menu for  analytical charts (maps, time series graphs, bar charts, box plots) generated from the meteorite landing dataset.
 
-### Premium Partners
+- Users can then select the chart description and use the paraphrasing tool to reword the description.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- The paraphrased content is generated in real-time, and users can choose to view the description in different languages.
+## Future Enhancements
+- User Authentication: Add authentication features to track user interactions and preferences.
+- Advanced Paraphrasing Features: Implement options for grammar correction and content summarization.
+- Data Visualization Options: Integrate additional charting libraries for enhanced data visualization.
