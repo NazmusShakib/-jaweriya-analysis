@@ -2,7 +2,7 @@
 
 
 return [
-    'openrouter_apikey' => env('OPENROUTER_API_KEY', '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'),
+    'openrouter_apikey' => env('OPENROUTER_API_KEY', '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'),
     'tabs' =>
       [
         'tab1' => [
