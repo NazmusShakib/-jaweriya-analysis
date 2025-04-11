@@ -26,15 +26,12 @@
                 </li>
             </ul>
 
-            <!-- Tab Content (Centered & Larger) -->
             <div class="tab-content mt-4" id="analysisTabContent">
-                <!-- Tab 1 Content -->
                 <div class="tab-pane fade show active text-center" id="tab1" role="tabpanel">
                     <img id="tab1-img" class="img-fluid rounded shadow-lg" style="max-height: 400px;" alt="Tab 1 Image">
                     <p class="mt-3 fs-5" id="tab1-desc">This is the description for Tab 1.</p>
                     <div class="d-flex justify-content-center mt-3">
                         <button class="btn btn-primary mx-2" onclick="paraphraseText('tab1-desc')">Paraphrase</button>
-                        
                         <select class="form-select w-auto mx-2 language-select">
                             <option value="en">English</option>
                             <option value="fr">French</option>
@@ -44,9 +41,7 @@
                             <option value="bn">Bangla</option>
                             <option value="hindi">Hindi</option>
                         </select>
-
                         <button class="btn btn-primary mx-2" onclick="paraphraseText('tab1-desc')">Submit</button>
-
                         <div class="loader" style="display: none;">
                             <div class="spinner-border text-primary" role="status">
                                 <span class="sr-only">Loading...</span>
@@ -171,17 +166,9 @@
 <script>
     function paraphraseText(tabId) {
         var description = $('#' + tabId).text();
-
-        // Find the closest loader element (using class) within the tab container
         var selectedLanguage = $('#' + tabId).closest('.tab-pane').find('.language-select').val();
-
         var loader = $('#' + tabId).closest('.tab-pane').find('.loader');
         loader.show();
-
-        /* setTimeout(function() {
-            loader.hide();
-        }, 2000); */
-
         $.ajax({
             url: '/paraphrase',
             method: 'POST',
@@ -193,7 +180,6 @@
             },
             success: function(response) {
                 loader.hide()
-
                 if (response.status === 'success') {
                     $('#' + tabId).text(response.paraphrasedText);
                 } else {

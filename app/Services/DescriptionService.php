@@ -40,15 +40,10 @@ class DescriptionService
     private function paraphraseTextService($text, $language)
     {
         try {
-            // $apiKey = "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";
-            $apiKey = "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";
-
+            $apiKey = config('custom-contents.openrouter_apikey');
             $baseUrl = "https://openrouter.ai/api/v1";
-
-            // Construct the paraphrasing message based on the selected language
             $message = "Can you paraphrase the following text in $language: '$text'";
 
-            // Call the API to paraphrase the text
             $response = Http::withHeaders([
                 'Authorization' => 'Bearer ' . $apiKey,
                 'Content-Type'  => 'application/json',
@@ -69,7 +64,6 @@ class DescriptionService
                 'body' => $response->body(),
             ]);
 
-            // Check if the API response is successful
             if ($response->successful()) {
                 $paraphrasedText = $response->json()['choices'][0]['message']['content'];
                 return [
@@ -78,7 +72,6 @@ class DescriptionService
                 ];
             }
 
-            // Handle unsuccessful API response
             return [
                 'status' => 'error',
                 'message' => 'Failed to paraphrase the text. Please try again later.',
